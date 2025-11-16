@@ -9,12 +9,13 @@ A estrutura de arquivos do projeto é a seguinte:
 ```
 /fiveminds
 ├── assets/
+|   └──js/                      # Scripts JavaScript
+│       |── app.js
+|       └── login.js                  
 │   └── images/
 │       └── fiveminds-logo.png  # Logo do aplicativo
 ├── css/
 │   └── style.css               # Folha de estilo principal
-├── js/
-│   └── app.js                  # Scripts JavaScript
 ├── busca.html                  # Tela de Busca de Grupos/Encontros
 ├── dash.html                   # Dashboard principal
 ├── grupo.html                  # Tela de Chat de Grupo

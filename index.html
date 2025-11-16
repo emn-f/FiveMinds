@@ -21,19 +21,24 @@
             <div class="login-card-body">
                 <form action="index.html">
                     <div class="input-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="username">Usuário/Email</label>
+                        <input type="text" id="username" placeholder="Digite seu usuário ou email">
                     </div>
                     <div class="input-group">
-                        <label for="password">Senha</label> <input type="password" id="password" name="password" required>
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" placeholder="Digite sua senha">
                     </div>
 
-                    <a href="dash.html" class="btn btn-primary btn-block">Entrar</a>
+                    <div id="login-message" style="color: red; margin-top: 1rem;"></div>
+                    
+
+                    <button type="submit" id="login-button" class="btn btn-primary btn-block">Sign in</button>
                     <a href="#" class="forgot-password">Esqueceu a senha?</a>
                 </form>
 
                 <button class="btn btn-google btn-block">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google G">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                        alt="Google G">
                     Entrar com Google
                 </button>
 
@@ -45,7 +50,8 @@
             <!-- Fim do Corpo do Card -->
         </div>
     </div>
-
+    <script src="assets/js/login.js"></script>
+</body>
 </body>
 
 </html>
