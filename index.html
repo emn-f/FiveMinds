@@ -3,9 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home - FiveMinds</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    
+
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="httpsa://i.imgur.com/v8S7RjP.png" alt="FiveMinds Logo" class="sidebar-logo">
+            </div>
+            <ul class="sidebar-nav">
+                <li class="nav-item active"><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item"><a href="grupo.html"><i class="fas fa-comment-dots"></i> Chat</a></li>
+                <li class="nav-item"><a href="#"><i class="fas fa-bell"></i> Notificações</a></li>
+            </ul>
+        </nav>
+
+        <header class="mobile-header">
+            <img src="httpsa://i.imgur.com/v8S7RjP.png" alt="FiveMinds Logo" class="header-logo">
+            <div class="status-icons">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </header>
+
+        <main class="main-content">
+            
+            <a href="busca.html" class="search-bar-link">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Pesquise novos grupos" readonly>
+                </div>
+            </a>
+
+            <section class="content-section">
+                <h2>Meus Grupos</h2>
+                <div class="grid-container-2col">
+                    <div class="card group-card">
+                        <span><i class="fas fa-book"></i> Cálculo 1</span>
+                        <small>5 membros</small>
+                        <div class="card-actions">
+                            <i class="fas fa-cog"></i> <i class="fas fa-share-square"></i>
+                        </div>
+                    </div>
+                    <div class="card group-card">
+                        <span><i class="fas fa-code"></i> Compiladores</span>
+                        <small>5 membros</small>
+                        <div class="card-actions">
+                            <i class="fas fa-cog"></i> <i class="fas fa-share-square"></i>
+                        </div>
+                    </div>
+                    <div class="card group-card">
+                        <span><i class="fas fa-language"></i> Inglês</span>
+                        <small>5 membros</small>
+                        <div class="card-actions">
+                            <i class="fas fa-cog"></i> <i class="fas fa-share-square"></i>
+                        </div>
+                    </div>
+                    <div class="card group-card">
+                        <span><i class="fas fa-brain"></i> LPA</span>
+                        <small>5 membros</small>
+                        <div class="card-actions">
+                            <i class="fas fa-cog"></i> <i class="fas fa-share-square"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Próximas Encontros</h2>
+                    <a href="#" class="btn-ver-todos">Ver todos</a>
+                </div>
+                <div class="list-container">
+                    <div class="list-item">
+                        <i class="fas fa-calendar-alt list-icon"></i>
+                        <div class="list-item-content">
+                            <strong>Estudar Cálculo</strong>
+                            <small>10/11 às 18h</small>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <i class="fas fa-calendar-alt list-icon"></i>
+                        <div class="list-item-content">
+                            <strong>Grupo de Inglês</strong>
+                            <small>14/11 às 10h</small>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <i class="fas fa-calendar-alt list-icon"></i>
+                        <div class="list-item-content">
+                            <strong>Estudar LPA</strong>
+                            <small>08/11 às 19h</small>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <i class="fas fa-calendar-alt list-icon"></i>
+                        <div class="list-item-content">
+                            <strong>Reunião do Vox</strong>
+                            <small>15/11 às 18h</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+        </main>
+
+        <nav class="mobile-nav">
+            <a href="index.html" class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="grupo.html" class="nav-item">
+                <i class="fas fa-comment-dots"></i>
+                <span>Chat</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-bell"></i>
+                <span>Notificações</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>

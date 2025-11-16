@@ -1,0 +1,619 @@
+/* --- RESET E VARIÁVEIS GLOBAIS --- */
+:root {
+    --primary-blue: #1976D2; /* Azul principal do protótipo */
+    --light-blue: #E3F2FD;  /* Azul claro para fundos */
+    --white: #FFFFFF;
+    --dark-text: #333333;
+    --light-text: #757575;
+    --bg-light: #F4F6F8;   /* Fundo geral (desktop) */
+    --border-color: #E0E0E0;
+    --green-accent: #4CAF50; /* Para botões como "Ver todos" */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+}
+
+/* --- ESTILOS DA PÁGINA DE LOGIN --- */
+.login-body {
+    background: linear-gradient(180deg, var(--primary-blue) 50%, var(--bg-light) 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.login-card {
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-logo {
+    width: 180px;
+    margin-bottom: 0.5rem;
+    /* Filtro para deixar a logo branca (se a original for preta) */
+    /* filter: brightness(0) invert(1); */ 
+}
+
+.login-subtitle {
+    color: var(--light-text);
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.btn {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: var(--dark-text); /* Botão "Sign in" é escuro */
+    color: var(--white);
+    margin-top: 1rem;
+}
+.btn-primary:hover {
+    background-color: #555;
+}
+
+.forgot-password {
+    display: block;
+    margin: 1rem 0;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-google {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    color: var(--dark-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.btn-google img {
+    width: 20px;
+    height: 20px;
+}
+.btn-google:hover {
+    background-color: #f9f9f9;
+}
+
+.login-footer {
+    margin-top: 2rem;
+}
+.login-footer a {
+    color: var(--light-text);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-size: 0.875rem;
+}
+
+/* --- ESTRUTURA PRINCIPAL DO APP --- */
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* --- BARRA LATERAL (DESKTOP) --- */
+.sidebar {
+    width: 240px;
+    background: var(--primary-blue);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+.sidebar-header {
+    margin-bottom: 2rem;
+}
+.sidebar-logo {
+    width: 150px;
+    filter: brightness(0) invert(1); /* Deixa a logo branca */
+}
+.sidebar-nav .nav-item {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+.sidebar-nav .nav-item a {
+    color: #E0E0E0;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+}
+.sidebar-nav .nav-item a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.sidebar-nav .nav-item.active a {
+    color: var(--white);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- CONTEÚDO PRINCIPAL (DESKTOP) --- */
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem;
+}
+
+/* --- HEADER E NAV (MOBILE) --- */
+.mobile-header, .mobile-nav {
+    display: none; /* Escondidos no desktop */
+}
+
+/* --- COMPONENTES GERAIS --- */
+.card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    border-radius: 99px; /* Pill shape */
+    padding: 0.75rem 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+.search-bar-link {
+    text-decoration: none;
+}
+.search-bar i {
+    color: var(--light-text);
+    margin-right: 0.5rem;
+}
+.search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.content-section {
+    margin-bottom: 2rem;
+}
+.content-section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--dark-text);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.btn-ver-todos {
+    background: var(--light-blue);
+    color: var(--primary-blue);
+    padding: 0.5rem 1rem;
+    border-radius: 99px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+/* Grid "Meus Grupos" */
+.grid-container-2col {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas no desktop */
+    gap: 1rem;
+}
+.group-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+.group-card span {
+    font-weight: 600;
+    color: var(--dark-text);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.group-card small {
+    color: var(--light-text);
+}
+.group-card .card-actions {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 1rem;
+    color: var(--light-text);
+}
+.group-card .card-actions i {
+    cursor: pointer;
+}
+
+/* Lista "Próximos Encontros" */
+.list-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas no desktop */
+    gap: 1rem;
+}
+.list-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.list-icon {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    background: var(--light-blue);
+    padding: 0.75rem;
+    border-radius: 8px;
+}
+.list-item-content {
+    display: flex;
+    flex-direction: column;
+}
+.list-item-content strong {
+    color: var(--dark-text);
+}
+.list-item-content small {
+    color: var(--light-text);
+}
+
+/* --- ESTILOS DA PÁGINA DE BUSCA --- */
+.result-item {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.result-item:hover {
+    background-color: var(--bg-light);
+}
+.btn-criar-grupo {
+    background-color: var(--green-accent);
+    color: var(--white);
+    margin-top: 2rem;
+}
+
+/* --- ESTILOS DO MODAL (POPUP) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none; /* Escondido por padrão */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--bg-light);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--light-text);
+    cursor: pointer;
+}
+.modal-content h3 {
+    margin-bottom: 0.5rem;
+}
+.modal-description {
+    color: var(--light-text);
+    margin-bottom: 1rem;
+}
+.integrantes-list {
+    list-style: none;
+    margin: 1rem 0;
+}
+.integrantes-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+.integrantes-list i {
+    color: var(--primary-blue);
+    font-size: 1.25rem;
+}
+
+/* --- ESTILOS DA PÁGINA DE CHAT --- */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ocupa altura total do main-content */
+}
+.chat-header-desktop {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+}
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.chat-info {
+    text-align: center;
+    color: var(--light-text);
+    font-size: 0.875rem;
+    margin: 0.5rem 0;
+}
+.message-bubble {
+    background: var(--white);
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    max-width: 70%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.message-bubble strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--primary-blue);
+}
+.message-bubble small {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--light-text);
+    font-size: 0.8rem;
+}
+.message-bubble.received {
+    align-self: flex-start;
+    border-top-left-radius: 0;
+}
+.message-bubble.sent {
+    align-self: flex-end;
+    background: var(--light-blue);
+    border-top-right-radius: 0;
+}
+.message-bubble.sent strong {
+    color: var(--green-accent); /* Ex: Cor do "usuário logado" */
+}
+
+.message-link {
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.chat-input-area {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: var(--white);
+    border-top: 1px solid var(--border-color);
+}
+.chat-input-area input {
+    flex: 1;
+    border: 1px solid var(--border-color);
+    border-radius: 99px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    margin: 0 1rem;
+}
+.chat-input-area i {
+    font-size: 1.25rem;
+    color: var(--light-text);
+    cursor: pointer;
+}
+.desktop-input {
+    display: flex;
+}
+.mobile-input {
+    display: none;
+}
+.chat-header.mobile-header,
+.chat-nav.mobile-nav {
+    display: none; /* Escondidos no desktop */
+}
+
+/* --- RESPONSIVIDADE (Mobile-first a partir daqui) --- */
+@media (max-width: 768px) {
+    /* --- Esconde Desktop, Mostra Mobile --- */
+    .sidebar {
+        display: none;
+    }
+    .main-content {
+        padding: 1rem;
+        /* Espaço para o rodapé fixo */
+        padding-bottom: 100px;
+    }
+
+    .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--primary-blue);
+        color: var(--white);
+        padding: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    .header-logo {
+        width: 120px;
+        filter: brightness(0) invert(1);
+    }
+    .status-icons {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .mobile-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        border-top: 1px solid var(--border-color);
+        box-shadow: 0 -4px 12px rgba(0,0,0,0.05);
+        display: flex;
+        justify-content: space-around;
+        padding: 0.5rem 0;
+        z-index: 100;
+    }
+    .mobile-nav .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: var(--light-text);
+        font-size: 0.75rem;
+        gap: 0.25rem;
+    }
+    .mobile-nav .nav-item i {
+        font-size: 1.25rem;
+    }
+    .mobile-nav .nav-item.active {
+        color: var(--primary-blue);
+    }
+    .mobile-nav .nav-item.active span {
+        /* A "bolinha" verde do protótipo */
+        background: var(--green-accent);
+        color: var(--white);
+        padding: 0.25rem 0.75rem;
+        border-radius: 99px;
+    }
+
+    /* --- Ajustes de Componentes --- */
+    .grid-container-2col {
+        grid-template-columns: 1fr 1fr; /* 2 colunas no mobile, como no figma */
+    }
+    .list-container {
+        grid-template-columns: 1fr; /* 1 coluna no mobile */
+    }
+    .search-bar {
+        margin-top: 1rem;
+    }
+
+    /* --- Ajustes do Chat Mobile --- */
+    .chat-container {
+        padding: 0;
+        padding-bottom: 100px; /* Espaço para nav e input */
+    }
+    .chat-header-desktop, .desktop-input {
+        display: none; /* Esconde inputs de desktop */
+    }
+    .chat-header.mobile-header {
+        display: flex;
+        position: sticky;
+        top: 0;
+    }
+    .chat-header .header-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .chat-header a {
+        color: var(--white);
+        font-size: 1.25rem;
+    }
+
+    .chat-nav.mobile-nav {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+    .chat-nav .mobile-input {
+        display: flex;
+        border-top: 1px solid var(--border-color);
+    }
+    .chat-nav .nav-item-row {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+    /* (Simplifiquei a nav do chat para ficar igual à nav Home, por clareza) */
+    /* Para replicar o Figma 100%, seria necessário JS para trocar o input */
+    
+    .chat-messages {
+        padding: 1rem;
+    }
+    .message-bubble {
+        max-width: 80%;
+    }
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca - FiveMinds</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="httpsa://i.imgur.com/v8S7RjP.png" alt="FiveMinds Logo" class="sidebar-logo">
+            </div>
+            <ul class="sidebar-nav">
+                <li class="nav-item"><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item"><a href="grupo.html"><i class="fas fa-comment-dots"></i> Chat</a></li>
+                <li class="nav-item"><a href="#"><i class="fas fa-bell"></i> Notificações</a></li>
+            </ul>
+        </nav>
+
+        <header class="mobile-header">
+            <img src="httpsa://i.imgur.com/v8S7RjP.png" alt="FiveMinds Logo" class="header-logo">
+            <div class="status-icons">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </header>
+
+        <main class="main-content">
+            
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Estrutura" value="Estrutura">
+                <i class="fas fa-microphone"></i>
+            </div>
+
+            <section class="content-section">
+                <div class="list-container">
+                    <div class="list-item result-item" id="open-modal-btn">
+                        <div class="list-item-content">
+                            <strong>Estrutura de Dados</strong>
+                            <small>2 membros</small>
+                        </div>
+                    </div>
+                    <div class="list-item result-item">
+                        <div class="list-item-content">
+                            <strong>Estrutura Discreta e Lógica</strong>
+                            <small>2 membros</small>
+                        </div>
+                    </div>
+                    <div class="list-item result-item">
+                        <div class="list-item-content">
+                            <strong>Estrutura de Processos</strong>
+                            <small>2 membros</small>
+                        </div>
+                    </div>
+                    <div class="list-item result-item">
+                        <div class="list-item-content">
+                            <strong>Estrutura de Sistemas</strong>
+                            <small>4 membros</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <button class="btn btn-primary btn-block btn-criar-grupo">Criar novo grupo</button>
+        
+        </main>
+
+        <nav class="mobile-nav">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="grupo.html" class="nav-item">
+                <i class="fas fa-comment-dots"></i>
+                <span>Chat</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-bell"></i>
+                <span>Notificações</span>
+            </a>
+        </nav>
+    </div>
+
+    <div class="modal-overlay" id="details-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="close-modal-btn">&times;</button>
+            <h3>Estrutura de Dados</h3>
+            <p class="modal-description">Grupo de estudo com ênfase em estrutura de dados com Java.</p>
+            
+            <strong>Integrantes:</strong>
+            <ul class="integrantes-list">
+                <li><i class="fas fa-user-circle"></i> Foca do Nascimento</li>
+                <li><i class="fas fa-user-circle"></i> Elefante Crispim</li>
+                <li><i class="fas fa-user-circle"></i> Malévola Boa Ventura</li>
+            </ul>
+
+            <button class="btn btn-primary btn-block">Entrar</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
