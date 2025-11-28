@@ -17,15 +17,15 @@
                 <span class="sidebar-title">FiveMinds</span>
             </div>
             <ul class="sidebar-nav">
-                <li class="nav-item"><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item"><a href="dash.html"><i class="fas fa-home"></i> Home</a></li>
                 <li class="nav-item active"><a href="grupo.html"><i class="fas fa-comment-dots"></i> Chat</a></li>
-                <li class="nav-item"><a href="index.html"><i class="fas fa-bell"></i> Notificações</a></li>
+                <li class="nav-item"><a href="dash.html"><i class="fas fa-bell"></i> Notificações</a></li>
             </ul>
         </nav>
 
         <div class="content-wrapper">
             <header class="mobile-header chat-header">
-                <a href="index.html"><i class="fas fa-chevron-left"></i></a>
+                <a href="dash.html"><i class="fas fa-chevron-left"></i></a>
                 <div class="header-title">
                     <strong>Estrutura de Dados</strong>
                     <small>Segunda, 18h</small>
@@ -38,7 +38,7 @@
                     <small>Segunda, 18h</small>
                 </div>
 
-                <div class="chat-messages">
+                <div class="chat-messages" id="chat-messages-container">
                     <div class="chat-info">Elefante Crispim entrou no grupo</div>
                     <div class="chat-info">Foca do Nascimento entrou no grupo</div>
 
@@ -69,9 +69,9 @@
                 </div>
 
                 <div class="chat-input-area desktop-input">
-                    <input type="text" placeholder="Digite aqui">
+                    <input type="text" placeholder="Digite aqui" id="chat-message-input">
                     <i class="fas fa-paperclip"></i>
-                    <i class="fas fa-paper-plane"></i>
+                    <i class="fas fa-paper-plane" id="chat-send-btn"></i>
                 </div>
             </main>
 
@@ -90,9 +90,9 @@
                     </a>
                 </div>
                 <div class="chat-input-area mobile-input">
-                    <input type="text" placeholder="Digite aqui">
+                    <input type="text" placeholder="Digite aqui" id="chat-message-input-mobile">
                     <i class="fas fa-paperclip"></i>
-                    <i class="fas fa-paper-plane"></i>
+                    <i class="fas fa-paper-plane" id="chat-send-btn-mobile"></i>
                 </div>
             </nav>
         </div>
